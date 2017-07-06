@@ -1576,7 +1576,7 @@ class BacktrackingTM(ConsolePrinterMixin, Serializable):
     while True:
       # We get the prediction for the columns in the next time step from
       # the topDownCompute method. It internally uses confidences.
-      multiStepColumnPredictions[step, :] = self.topDownCompute()
+      multiStepColumnPredictions[step, :] = self.getPredictedState()
 
       # Cleanest way in python to handle one and half loops
       if step == nSteps-1:
